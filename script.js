@@ -83,7 +83,7 @@ function check() {
     .map((item) => item[1]);
 
   for (pos of positions) {
-    if (pos.every((item) => items.includes(item))) {
+    if (pos.every((item) => items.includes(item))) { //Verifica cada posição do jogador vencedor se possui as posições de virtória 
 
       let winner;
 
@@ -101,6 +101,7 @@ function check() {
     }
   }
 
+  //Após passar pelo for e concluir que não houve vencedor, o if aqui verificar se há 9 posições preenchidas. Caso haja, então o jogo terminou empatado
   if (jogadas.filter((item) => item).length === 9) {
 
     setTimeout(() => {
