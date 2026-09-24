@@ -1,9 +1,9 @@
 const jogadorAtual = document.querySelector(".jogadorAtual");
 
-let jogadas; //
+let jogadas;
 
-let playerX = prompt("Digite o nome do jogador X:");
-let playerO = prompt("Digite o nome do jogador O:");
+let playerX;
+let playerO;
 
 let player = "X";
 
@@ -17,6 +17,13 @@ let positions = [
   [1, 5, 9],
   [3, 5, 7],
 ];
+
+//Essa função serve para o javascritp carregar apenas depois do html. Sem isso, a mensagem de prompt aparece antes do resto da página
+window.addEventListener("load", () => {
+  playerX = prompt("Digite o nome do jogador X:") || "Jogador X";
+  playerO = prompt("Digite o nome do jogador O:") || "Jogador O";
+  init();
+});
 
 /* Inicio */
 function init() {
